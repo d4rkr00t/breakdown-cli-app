@@ -4,8 +4,8 @@ import { Entry, getEntryNextState } from "./entry";
 export class Data {
   private conf: Conf<any>;
   inprogress: Entry | undefined;
+  entries: Record<string, Entry>;
   private queue: string[];
-  private entries: Record<string, Entry>;
   private stats: Record<string, number>;
 
   constructor() {

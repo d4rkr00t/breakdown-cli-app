@@ -8,12 +8,8 @@ import { printEntry } from "../common/entry";
 export default async function main() {
   const data = new Data();
 
-  if (data.inprogress) {
-    printEntry(data.inprogress);
-    return;
+  for (let entry of Object.values(data.entries)) {
+    printEntry(entry);
+    console.log();
   }
-
-  console.log(
-    "Nothing is in progress right now! Run `breakdown next` to pick the next task."
-  );
 }

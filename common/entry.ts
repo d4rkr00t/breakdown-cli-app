@@ -31,7 +31,7 @@ export function printEntry(entry: Entry) {
   console.log("    title:   ", entry.title);
   console.log("    url:     ", entry.url);
   console.log("    state:   ", formatState(entry.state));
-  console.log("    keywords:", entry.keywords);
+  console.log("    keywords:", entry.keywords.join(", "));
   console.log("}");
 }
 
