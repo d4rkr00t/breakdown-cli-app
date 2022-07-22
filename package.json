@@ -1,0 +1,40 @@
+{
+  "name": "breakdown-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "opaline build",
+    "dev": "opaline dev",
+    "typecheck": "tsc",
+    "lint:staged": "lint-staged",
+    "prepare": "npm run typecheck"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "breakdown": "dist/cli.js"
+  },
+  "pre-commit": [
+    "lint:staged"
+  ],
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@opaline/core": "*",
+    "conf": "^10.1.2",
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "lint-staged": "*",
+    "pre-commit": "*",
+    "prettier": "*",
+    "typescript": "*"
+  }
+}
